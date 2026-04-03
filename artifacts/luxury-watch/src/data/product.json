@@ -1,0 +1,42 @@
+{
+  "id": "prod-001",
+  "name": "Artisan Leather Watch",
+  "brand": "AURUM & CO.",
+  "tagline": "Timeless Elegance, Modern Craftsmanship",
+  "description": "Handcrafted with precision and passion, this luxury timepiece features genuine Italian leather, sapphire crystal glass, and Swiss-made movement. Each watch is individually numbered and comes with a lifetime warranty.",
+  "price": 1299.00,
+  "currency": "USD",
+  "colors": [
+    { "id": "midnight", "name": "Midnight Black", "hex": "#1a1a1a", "band": "#2d2d2d" },
+    { "id": "cognac", "name": "Cognac Brown", "hex": "#8B4513", "band": "#A0522D" },
+    { "id": "burgundy", "name": "Burgundy Red", "hex": "#722F37", "band": "#8B0000" },
+    { "id": "forest", "name": "Forest Green", "hex": "#228B22", "band": "#2E8B57" }
+  ],
+  "features": [
+    "Swiss Quartz Movement",
+    "Genuine Italian Leather Strap",
+    "Sapphire Crystal Glass",
+    "50m Water Resistant",
+    "42mm Case Diameter",
+    "Date Display Window"
+  ],
+  "gallery": [
+    { "id": "front", "alt": "Front view of the watch", "angle": "front" },
+    { "id": "side", "alt": "Side profile showing case thickness", "angle": "side" },
+    { "id": "detail", "alt": "Close-up of the dial", "angle": "detail" },
+    { "id": "strap", "alt": "Leather strap texture", "angle": "strap" }
+  ],
+  "specifications": {
+    "caseMaterial": "316L Stainless Steel",
+    "caseDiameter": "42mm",
+    "caseThickness": "11mm",
+    "strapWidth": "22mm",
+    "movement": "Swiss Quartz Ronda 715",
+    "glass": "Sapphire Crystal",
+    "waterResistance": "5 ATM (50m)"
+  },
+  "rating": 4.8,
+  "reviews": 247,
+  "inStock": true,
+  "freeShipping": true
+}
