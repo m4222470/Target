@@ -20,15 +20,9 @@ export default function StickyCartBar({ productRef }: { productRef: React.RefObj
   }, [productRef]);
 
   const handleQuickAdd = () => {
-    addItem({
-      id: productData.id,
-      name: productData.name,
-      price: productData.price,
-      quantity: 1,
-      colorId: productData.colors[0].id,
-      colorName: productData.colors[0].name,
-      colorHex: productData.colors[0].hex,
-    });
+    const color = productData.colors[0];
+    if (!color) return;
+    addItem(productData, color, 1);
     openCart();
   };
 
