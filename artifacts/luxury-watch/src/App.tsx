@@ -2,12 +2,14 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShoppingBag, Trash2, Plus, Minus, Instagram, Twitter, Facebook, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
-import Gallery from './components/Gallery';
+import Watch3DViewer from './components/Watch3DViewer';
 import ProductDetails from './components/ProductDetails';
 import ColorSelector from './components/ColorSelector';
 import QuantitySelector from './components/QuantitySelector';
 import AddToCartButton from './components/AddToCartButton';
 import DarkModeToggle from './components/DarkModeToggle';
+import StickyCartBar from './components/StickyCartBar';
+import FloatingConcierge from './components/FloatingConcierge';
 
 import StatsBar from './sections/StatsBar';
 import FeaturedCollection from './sections/FeaturedCollection';
@@ -17,12 +19,15 @@ import WhyChooseUs from './sections/WhyChooseUs';
 import Testimonials from './sections/Testimonials';
 import PressAwards from './sections/PressAwards';
 import Newsletter from './sections/Newsletter';
+import CountdownBanner from './sections/CountdownBanner';
+import SpecsTable from './sections/SpecsTable';
 
 import productData from './data/product.json';
 import useCartStore, { CartItem } from './store/cartStore';
 import useThemeStore from './store/themeStore';
 
 import heroBanner from '@assets/hero_banner_1775253265317.webp';
+import heroVideo from '@assets/hero_loop_1775253465787.mp4';
 
 const navLinks = [
   { label: 'Collection', href: '#collection' },
@@ -191,6 +196,7 @@ function App() {
   const [quantity, setQuantity] = useState(1);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const productSectionRef = useRef<HTMLElement>(null);
   const isCartOpen = useCartStore((state) => state.isCartOpen);
   const closeCart = useCartStore((state) => state.closeCart);
   const { isDarkMode } = useThemeStore();
@@ -277,8 +283,18 @@ function App() {
       </header>
 
       <div className="relative h-[85vh] min-h-[500px] overflow-hidden">
-        <img src={heroBanner} alt="Hero banner" className="w-full h-full object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10 flex items-center">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          poster={heroBanner}
+        >
+          <source src={heroVideo} type="video/mp4" />
+          <img src={heroBanner} alt="Hero" className="absolute inset-0 w-full h-full object-cover" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -339,7 +355,7 @@ function App() {
 
       <StatsBar />
 
-      <section id="product" className="py-20 bg-white dark:bg-neutral-950">
+      <section id="product" ref={productSectionRef} className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             <motion.div
@@ -347,7 +363,7 @@ function App() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <Gallery images={productData.gallery} selectedColor={selectedColor} />
+              <Watch3DViewer />
             </motion.div>
 
             <motion.div
@@ -392,9 +408,13 @@ function App() {
         </div>
       </section>
 
+      <CountdownBanner />
+
       <div id="collection">
         <FeaturedCollection />
       </div>
+
+      <SpecsTable />
 
       <div id="heritage">
         <BrandHeritage />
@@ -486,6 +506,8 @@ function App() {
         </div>
       </footer>
 
+      <StickyCartBar productRef={productSectionRef} />
+      <FloatingConcierge />
       <CartDrawer isOpen={isCartOpen} onClose={closeCart} />
     </div>
   );
