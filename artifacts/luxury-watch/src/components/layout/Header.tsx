@@ -11,18 +11,18 @@ import useThemeStore from '../../store/themeStore';
 import DarkModeToggle from '../DarkModeToggle';
 
 const categories = [
-  { id: 'watches', label: 'Timepieces', icon: Watch, href: '/shop/watches' },
-  { id: 'jewelry', label: 'Fine Jewelry', icon: Gem, href: '/shop/jewelry' },
-  { id: 'accessories', label: 'Accessories', icon: Glasses, href: '/shop/accessories' },
-  { id: 'fragrances', label: 'Fragrances', icon: FlaskConical, href: '/shop/fragrances' },
-  { id: 'leather', label: 'Leather Goods', icon: Briefcase, href: '/shop/leather' },
+  { id: 'watches', label: 'Timepieces', icon: Watch, href: '/collections/watches', shopHref: '/shop/watches' },
+  { id: 'jewelry', label: 'Fine Jewelry', icon: Gem, href: '/collections/jewelry', shopHref: '/shop/jewelry' },
+  { id: 'accessories', label: 'Accessories', icon: Glasses, href: '/collections/accessories', shopHref: '/shop/accessories' },
+  { id: 'fragrances', label: 'Fragrances', icon: FlaskConical, href: '/collections/fragrances', shopHref: '/shop/fragrances' },
+  { id: 'leather', label: 'Leather Goods', icon: Briefcase, href: '/collections/leather', shopHref: '/shop/leather' },
 ];
 
 const navLinks = [
-  { label: 'Shop', href: '/shop', hasDropdown: true },
+  { label: 'Collections', href: '/shop', hasDropdown: true },
+  { label: 'Lookbook', href: '/lookbook' },
   { label: 'Journal', href: '/journal' },
-  { label: 'Heritage', href: '/about' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Boutiques', href: '/boutiques' },
 ];
 
 export default function Header() {
@@ -115,14 +115,23 @@ export default function Header() {
                               <Link key={cat.id} href={cat.href}>
                                 <div className="flex items-center gap-3 px-4 py-3 hover:bg-amber-50 dark:hover:bg-neutral-700 transition-colors cursor-pointer group">
                                   <cat.icon className="w-4 h-4 text-amber-600 group-hover:scale-110 transition-transform" />
-                                  <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">{cat.label}</span>
+                                  <div>
+                                    <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">{cat.label}</span>
+                                    <span className="block text-xs text-neutral-400">Shop now →</span>
+                                  </div>
                                 </div>
                               </Link>
                             ))}
-                            <div className="border-t border-neutral-100 dark:border-neutral-700">
+                            <div className="border-t border-neutral-100 dark:border-neutral-700 grid grid-cols-2">
+                              <Link href="/gift-guide">
+                                <div className="px-4 py-3 text-xs font-semibold text-neutral-600 dark:text-neutral-400 hover:bg-amber-50 dark:hover:bg-neutral-700 cursor-pointer hover:text-amber-600">🎁 Gift Guide</div>
+                              </Link>
+                              <Link href="/lookbook">
+                                <div className="px-4 py-3 text-xs font-semibold text-neutral-600 dark:text-neutral-400 hover:bg-amber-50 dark:hover:bg-neutral-700 cursor-pointer hover:text-amber-600">📸 Lookbook</div>
+                              </Link>
                               <Link href="/shop">
-                                <div className="px-4 py-3 text-sm font-semibold text-amber-600 hover:bg-amber-50 dark:hover:bg-neutral-700 cursor-pointer">
-                                  View All →
+                                <div className="col-span-2 px-4 py-3 text-sm font-semibold text-amber-600 hover:bg-amber-50 dark:hover:bg-neutral-700 cursor-pointer">
+                                  View All Collections →
                                 </div>
                               </Link>
                             </div>

@@ -32,9 +32,24 @@ import ShippingPage from './pages/ShippingPage';
 import WarrantyPage from './pages/WarrantyPage';
 import WatchCarePage from './pages/WatchCarePage';
 
+import GiftGuidePage from './pages/GiftGuidePage';
+import SizeGuidePage from './pages/SizeGuidePage';
+import LookbookPage from './pages/LookbookPage';
+import TrackOrderPage from './pages/TrackOrderPage';
+import PrivateClientPage from './pages/PrivateClientPage';
+import BoutiquesPage from './pages/BoutiquesPage';
+import LoyaltyPage from './pages/LoyaltyPage';
+
+import WatchesCollectionPage from './pages/collections/WatchesCollectionPage';
+import JewelryCollectionPage from './pages/collections/JewelryCollectionPage';
+import FragrancesCollectionPage from './pages/collections/FragrancesCollectionPage';
+import AccessoriesCollectionPage from './pages/collections/AccessoriesCollectionPage';
+import LeatherCollectionPage from './pages/collections/LeatherCollectionPage';
+
 import AdminPage from './pages/AdminPage';
 import AdminProductsPage from './pages/AdminProductsPage';
 import AdminOrdersPage from './pages/AdminOrdersPage';
+import AdminAnalyticsPage from './pages/AdminAnalyticsPage';
 
 const NotFound = () => (
   <div className="min-h-[60vh] flex items-center justify-center bg-neutral-50 dark:bg-neutral-950">
@@ -48,8 +63,6 @@ const NotFound = () => (
     </div>
   </div>
 );
-
-const noLayoutPaths = ['/checkout', '/login', '/register', '/order-confirmation'];
 
 function AppLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -81,6 +94,7 @@ export default function App() {
 
   return (
     <Switch>
+      {/* Auth & Checkout — minimal layout */}
       <Route path="/login">
         <MinimalLayout><LoginPage /></MinimalLayout>
       </Route>
@@ -94,6 +108,38 @@ export default function App() {
         <MinimalLayout><OrderConfirmationPage /></MinimalLayout>
       </Route>
 
+      {/* Admin — standalone full-screen */}
+      <Route path="/admin/analytics">
+        <AdminAnalyticsPage />
+      </Route>
+      <Route path="/admin/products">
+        <AdminProductsPage />
+      </Route>
+      <Route path="/admin/orders">
+        <AdminOrdersPage />
+      </Route>
+      <Route path="/admin">
+        <AdminPage />
+      </Route>
+
+      {/* Collection landing pages */}
+      <Route path="/collections/watches">
+        <AppLayout><WatchesCollectionPage /></AppLayout>
+      </Route>
+      <Route path="/collections/jewelry">
+        <AppLayout><JewelryCollectionPage /></AppLayout>
+      </Route>
+      <Route path="/collections/fragrances">
+        <AppLayout><FragrancesCollectionPage /></AppLayout>
+      </Route>
+      <Route path="/collections/accessories">
+        <AppLayout><AccessoriesCollectionPage /></AppLayout>
+      </Route>
+      <Route path="/collections/leather">
+        <AppLayout><LeatherCollectionPage /></AppLayout>
+      </Route>
+
+      {/* Shopping */}
       <Route path="/">
         <AppLayout><HomePage /></AppLayout>
       </Route>
@@ -113,6 +159,7 @@ export default function App() {
         <AppLayout><WishlistPage /></AppLayout>
       </Route>
 
+      {/* Account */}
       <Route path="/account/orders">
         <AppLayout><OrdersPage /></AppLayout>
       </Route>
@@ -120,6 +167,36 @@ export default function App() {
         <AppLayout><AccountPage /></AppLayout>
       </Route>
 
+      {/* Editorial & Experience */}
+      <Route path="/lookbook">
+        <AppLayout><LookbookPage /></AppLayout>
+      </Route>
+      <Route path="/journal/:slug">
+        <AppLayout><JournalArticlePage /></AppLayout>
+      </Route>
+      <Route path="/journal">
+        <AppLayout><JournalPage /></AppLayout>
+      </Route>
+      <Route path="/gift-guide">
+        <AppLayout><GiftGuidePage /></AppLayout>
+      </Route>
+      <Route path="/size-guide">
+        <AppLayout><SizeGuidePage /></AppLayout>
+      </Route>
+      <Route path="/track-order">
+        <AppLayout><TrackOrderPage /></AppLayout>
+      </Route>
+      <Route path="/private-client">
+        <AppLayout><PrivateClientPage /></AppLayout>
+      </Route>
+      <Route path="/boutiques">
+        <AppLayout><BoutiquesPage /></AppLayout>
+      </Route>
+      <Route path="/loyalty">
+        <AppLayout><LoyaltyPage /></AppLayout>
+      </Route>
+
+      {/* Brand */}
       <Route path="/about">
         <AppLayout><AboutPage /></AppLayout>
       </Route>
@@ -128,12 +205,6 @@ export default function App() {
       </Route>
       <Route path="/faq">
         <AppLayout><FAQPage /></AppLayout>
-      </Route>
-      <Route path="/journal/:slug">
-        <AppLayout><JournalArticlePage /></AppLayout>
-      </Route>
-      <Route path="/journal">
-        <AppLayout><JournalPage /></AppLayout>
       </Route>
       <Route path="/sustainability">
         <AppLayout><SustainabilityPage /></AppLayout>
@@ -152,16 +223,6 @@ export default function App() {
       </Route>
       <Route path="/watch-care">
         <AppLayout><WatchCarePage /></AppLayout>
-      </Route>
-
-      <Route path="/admin/products">
-        <AdminProductsPage />
-      </Route>
-      <Route path="/admin/orders">
-        <AdminOrdersPage />
-      </Route>
-      <Route path="/admin">
-        <AdminPage />
       </Route>
 
       <Route>
