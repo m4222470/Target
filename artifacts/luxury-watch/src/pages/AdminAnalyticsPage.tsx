@@ -107,15 +107,6 @@ export default function AdminAnalyticsPage() {
   const [, setLocation] = useLocation();
   const [dateRange] = useState('Oct 1, 2023 – Oct 31, 2023');
 
-  if (!user || user.role !== 'admin') {
-    return (
-      <div style={{ minHeight: '100vh', background: '#0b0f1a', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 16 }}>
-        <p style={{ color: '#fff', fontSize: 20, fontWeight: 700 }}>Access Denied</p>
-        <p style={{ color: '#64748b', fontSize: 14 }}>Admin access required. Please sign in with admin credentials.</p>
-        <Link href="/login"><button style={{ background: 'linear-gradient(135deg, #00f5ff, #7b61ff)', border: 'none', color: '#fff', padding: '10px 24px', borderRadius: 10, cursor: 'pointer', fontWeight: 600 }}>Sign In</button></Link>
-      </div>
-    );
-  }
 
   return (
     <div style={{ minHeight: '100vh', background: '#0b0f1a', display: 'flex', fontFamily: "'Inter', sans-serif", color: '#fff' }}>
@@ -151,9 +142,9 @@ export default function AdminAnalyticsPage() {
 
         <div style={{ padding: '16px 20px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-            <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'linear-gradient(135deg, #00f5ff, #7b61ff)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700 }}>{user.name[0]}</div>
+            <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'linear-gradient(135deg, #00f5ff, #7b61ff)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700 }}>A</div>
             <div>
-              <p style={{ fontSize: 12, fontWeight: 600 }}>{user.name}</p>
+              <p style={{ fontSize: 12, fontWeight: 600 }}>{user?.name ?? 'Admin'}</p>
               <p style={{ fontSize: 10, color: '#64748b' }}>Administrator</p>
             </div>
           </div>
