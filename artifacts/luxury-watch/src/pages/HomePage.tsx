@@ -48,12 +48,12 @@ export default function HomePage() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-4 mt-8">
               <Link href="/shop">
-                <button className="px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-full transition-colors shadow-xl text-sm tracking-wide flex items-center gap-2">
+                <button className="px-8 py-4 bg-white hover:bg-neutral-100 text-neutral-900 font-semibold rounded-full transition-all shadow-2xl text-sm tracking-widest uppercase flex items-center gap-2">
                   Shop Collection <ArrowRight className="w-4 h-4" />
                 </button>
               </Link>
               <Link href="/about">
-                <button className="px-8 py-4 border border-white/40 hover:border-white text-white font-semibold rounded-full backdrop-blur-sm transition-colors text-sm tracking-wide">
+                <button className="px-8 py-4 border border-white/40 hover:border-white/80 hover:bg-white/10 text-white font-semibold rounded-full backdrop-blur-md transition-all text-sm tracking-widest uppercase">
                   Our Story
                 </button>
               </Link>

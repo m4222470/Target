@@ -45,6 +45,8 @@ import LimitedEditionsPage from './pages/LimitedEditionsPage';
 import BespokePage from './pages/BespokePage';
 import CollaborationsPage from './pages/CollaborationsPage';
 import AfterSalesPage from './pages/AfterSalesPage';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
 
 import WatchesCollectionPage from './pages/collections/WatchesCollectionPage';
 import JewelryCollectionPage from './pages/collections/JewelryCollectionPage';
@@ -263,8 +265,11 @@ export default function App() {
       <Route path="/watch-care">
         <AppLayout><WatchCarePage /></AppLayout>
       </Route>
-      <Route path="/after-sales">
-        <AppLayout><AfterSalesPage /></AppLayout>
+      <Route path="/privacy">
+        <AppLayout><PrivacyPage /></AppLayout>
+      </Route>
+      <Route path="/terms">
+        <AppLayout><TermsPage /></AppLayout>
       </Route>
 
       <Route>

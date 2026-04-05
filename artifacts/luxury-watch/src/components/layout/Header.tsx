@@ -57,8 +57,10 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-amber-600 text-white text-center text-xs py-2 px-4 tracking-wider font-medium">
-        Free worldwide shipping · Certificate of authenticity · 60-day returns
+      <div className="bg-neutral-950 text-center py-3 px-6">
+        <p className="text-[0.68rem] tracking-[0.22em] text-[#c9a850] font-light uppercase">
+          Free Worldwide Shipping&nbsp;&nbsp;·&nbsp;&nbsp;Certificate of Authenticity&nbsp;&nbsp;·&nbsp;&nbsp;60-Day Returns
+        </p>
       </div>
 
       <header className={`sticky top-0 z-40 transition-all duration-300 ${
