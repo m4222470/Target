@@ -1,0 +1,298 @@
+You are a senior frontend architect + UI/UX designer specialized in premium SaaS dashboards.
+
+Your task is to design and generate a COMPLETE Cyberpunk Glassmorphism SaaS Dashboard UI that matches high-end ThemeForest products.
+
+You must follow ALL specifications strictly.
+
+---
+
+1. DESIGN PHILOSOPHY
+
+---
+
+- Style: Cyberpunk + Futuristic + AI Analytics UI
+- Feel: Premium, glowing, depth-rich, not flat
+- Visual Hierarchy: strong contrast, clear data emphasis
+- Avoid: generic bootstrap look, flat UI, boring layouts
+
+---
+
+2. COLOR SYSTEM (STRICT TOKENS)
+
+---
+
+Use ONLY these tokens consistently:
+
+BACKGROUND:
+
+- Primary Background: #0b0f1a
+- Secondary Background: #111827
+
+NEON COLORS:
+
+- Neon Cyan: #00f5ff
+- Neon Purple: #7b61ff
+- Neon Green: #00ff9f
+- Neon Pink: #ff4d6d
+
+TEXT:
+
+- Primary Text: #ffffff
+- Secondary Text: rgba(255,255,255,0.7)
+- Muted Text: rgba(255,255,255,0.4)
+
+BORDERS:
+
+- Subtle Border: rgba(255,255,255,0.1)
+
+---
+
+3. COLOR USAGE RULES (VERY IMPORTANT)
+
+---
+
+- Background must ALWAYS be dark (#0b0f1a)
+- Neon colors are used ONLY for:
+  • highlights
+  • charts
+  • active states
+- Never fill large areas with neon colors
+- Use gradients only for:
+  • buttons
+  • charts
+  • key highlights
+
+Gradient Example:
+linear-gradient(135deg, #00f5ff, #7b61ff)
+
+---
+
+4. GLASSMORPHISM SYSTEM
+
+---
+
+Every card MUST follow:
+
+background: rgba(255,255,255,0.05)
+backdrop-filter: blur(10px)
+border-radius: 16px
+border: 1px solid rgba(255,255,255,0.1)
+
+Shadow:
+box-shadow: 0 8px 32px rgba(0,0,0,0.3)
+
+---
+
+5. GLOW SYSTEM (CRITICAL)
+
+---
+
+Apply glow ONLY to:
+
+- active buttons
+- chart lines
+- important stats
+
+Glow Example:
+box-shadow:
+0 0 10px #00f5ff,
+0 0 20px rgba(0,245,255,0.5),
+0 0 40px rgba(0,245,255,0.2)
+
+Hover:
+
+- Increase glow intensity
+- Slight scale or translateY(-5px)
+
+---
+
+6. LAYOUT ARCHITECTURE
+
+---
+
+Use a structured grid:
+
+Desktop:
+grid-template-columns: 250px 1fr
+Sidebar fixed on left
+
+Dashboard Grid:
+
+- 4 columns layout
+- gap: 20px
+
+Sections:
+
+1. Sidebar
+2. Top Navbar
+3. Stats Cards Row
+4. Charts Section
+5. Activity Panel
+
+---
+
+7. COMPONENT SPECIFICATIONS
+
+---
+
+A. SIDEBAR
+
+- Dark background (#0b0f1a)
+- Active item glow
+- Icons + text
+- Hover highlight (neon border-left)
+
+B. NAVBAR
+
+- Transparent glass effect
+- Search input
+- Notification icon
+- Profile avatar
+
+C. STATS CARDS
+Each card contains:
+
+- Title (small text)
+- Big number (bold, large)
+- Small trend indicator (+12%)
+
+Card accent:
+
+- small neon line or icon
+- subtle glow
+
+D. CHARTS
+Use Chart.js or ApexCharts
+
+LINE CHART:
+
+- Smooth curve (tension)
+- Neon cyan line
+- Gradient fill under line
+- No heavy grid lines
+
+BAR CHART:
+
+- Rounded bars
+- Neon gradient
+- Glow on hover
+
+E. ACTIVITY PANEL
+
+- List of recent actions
+- small icons
+- timestamps
+
+---
+
+8. TYPOGRAPHY
+
+---
+
+Font: Inter or Poppins
+
+Rules:
+
+- Numbers: large and bold
+- Titles: medium weight
+- Secondary text: lower opacity
+
+---
+
+9. ANIMATIONS
+
+---
+
+Use subtle animations only:
+
+- Hover lift:
+  transform: translateY(-5px)
+
+- Fade in:
+  opacity 0 → 1
+
+- Transition:
+  0.3s ease
+
+---
+
+10. SPACING SYSTEM
+
+---
+
+- Padding inside cards: 20px
+- Gap between elements: 20px
+- Section margin: 30px
+
+---
+
+11. RESPONSIVENESS
+
+---
+
+Tablet:
+
+- 2 columns
+
+Mobile:
+
+- 1 column
+- Sidebar collapses
+
+---
+
+12. REALISTIC DATA (IMPORTANT)
+
+---
+
+Use realistic SaaS data:
+
+Examples:
+
+- Revenue: $32,450
+- Users: 12.4K
+- Growth: +18.2%
+- Chart labels: Jan, Feb, Mar...
+
+---
+
+13. CODE QUALITY
+
+---
+
+- Clean structure
+- Separate CSS
+- Reusable classes
+- No inline messy code
+
+---
+
+14. FINAL VISUAL GOAL
+
+---
+
+The UI must look like:
+
+- Premium SaaS dashboard
+- Worth $30–$60 on ThemeForest
+- Comparable to Stripe / Vercel dashboards
+
+---
+
+15. HARD CONSTRAINTS (DO NOT BREAK)
+
+---
+
+- NO white background
+- NO flat design
+- NO bootstrap look
+- MUST include glow + glass
+- MUST look futuristic
+
+---
+
+OUTPUT:
+
+- Full HTML + CSS + JS
+- Working charts
+- Fully styled UI
