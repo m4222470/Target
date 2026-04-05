@@ -75,9 +75,9 @@ const jewelryImages = [
   'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80',
   'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80',
   'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80',
-  'https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=800&q=80',
-  'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=800&q=80',
-  'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&q=80',
+  'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&q=80',
+  'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&q=80',
+  'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
 ];
 
 const accessoryImages = [
@@ -98,7 +98,7 @@ const leatherImages = [
   'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80',
   'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80',
   'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80',
-  'https://images.unsplash.com/photo-1566150905458-1bf1a63db8a0?w=800&q=80',
+  'https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=800&q=80',
 ];
 
 export const products: Product[] = [

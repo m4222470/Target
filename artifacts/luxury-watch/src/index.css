@@ -3,7 +3,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+/* ═══════════════════════════════════════════════
+   CHAMPAGNE GOLD — replaces orange/amber palette
+   Brand colors: muted, sophisticated, luxurious
+═══════════════════════════════════════════════ */
+@theme {
+  --color-amber-50:  #fdf8ee;
+  --color-amber-100: #f6e9c4;
+  --color-amber-200: #ecd28a;
+  --color-amber-300: #ddb84d;
+  --color-amber-400: #c9a227;
+  --color-amber-500: #aa8318;
+  --color-amber-600: #8c6712;
+  --color-amber-700: #6e4f0f;
+  --color-amber-800: #573d0d;
+  --color-amber-900: #46300c;
+  --color-amber-950: #271806;
+
+  /* Theme tokens */
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-border: hsl(var(--border));
@@ -37,16 +54,16 @@
   --card-foreground: 0 0% 9%;
   --muted: 0 0% 96%;
   --muted-foreground: 0 0% 45%;
-  --primary: 38 92% 43%;
+  --primary: 43 74% 46%;        /* Champagne Gold */
   --primary-foreground: 0 0% 100%;
   --secondary: 0 0% 96%;
   --secondary-foreground: 0 0% 9%;
-  --accent: 38 92% 43%;
+  --accent: 43 74% 46%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   --input: 0 0% 89%;
-  --ring: 38 92% 43%;
+  --ring: 43 74% 46%;
   --popover: 0 0% 100%;
   --popover-foreground: 0 0% 9%;
   --radius: 0.5rem;
@@ -61,16 +78,16 @@
   --card-foreground: 0 0% 96%;
   --muted: 0 0% 15%;
   --muted-foreground: 0 0% 64%;
-  --primary: 38 92% 50%;
+  --primary: 43 68% 52%;        /* Lighter champagne for dark mode */
   --primary-foreground: 0 0% 100%;
   --secondary: 0 0% 15%;
   --secondary-foreground: 0 0% 96%;
-  --accent: 38 92% 50%;
+  --accent: 43 68% 52%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 63% 31%;
   --destructive-foreground: 0 0% 96%;
   --input: 0 0% 20%;
-  --ring: 38 92% 50%;
+  --ring: 43 68% 52%;
   --popover: 0 0% 9%;
   --popover-foreground: 0 0% 96%;
   --gallery-bg: #1a1a1a;
@@ -89,65 +106,33 @@
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #d4d4d4;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #a3a3a3;
-}
-.dark ::-webkit-scrollbar-thumb {
-  background: #404040;
-}
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #525252;
-}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a3a3a3; }
+.dark ::-webkit-scrollbar-thumb { background: #404040; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #525252; }
 
 /* Remove number input spinners */
 input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type='number'] {
-  -moz-appearance: textfield;
-}
+input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type='number'] { -moz-appearance: textfield; }
 
-/* Focus visible styles */
-*:focus-visible {
-  outline: 2px solid #d97706;
-  outline-offset: 2px;
-}
-.dark *:focus-visible {
-  outline-color: #fbbf24;
-}
+/* Focus visible styles — champagne gold */
+*:focus-visible { outline: 2px solid #8c6712; outline-offset: 2px; }
+.dark *:focus-visible { outline-color: #c9a227; }
 
-/* Selection styles */
-::selection {
-  background-color: #fcd34d;
-  color: #1c1917;
-}
-.dark ::selection {
-  background-color: #b45309;
-  color: #fef3c7;
-}
+/* Selection styles — champagne gold */
+::selection { background-color: #ecd28a; color: #1c1917; }
+.dark ::selection { background-color: #6e4f0f; color: #fdf8ee; }
 
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 .animate-fade-in { animation: fade-in 0.3s ease-out; }
 .animate-slide-up { animation: slide-up 0.4s ease-out; }
