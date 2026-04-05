@@ -125,7 +125,7 @@ export default function App() {
         <AdminOrdersPage />
       </Route>
       <Route path="/admin">
-        <AdminPage />
+        <AdminAnalyticsPage />
       </Route>
 
       {/* ───────────────────────────────────────────────
