@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Route, Switch } from 'wouter';
+import { Route, Switch, Redirect } from 'wouter';
 import useThemeStore from './store/themeStore';
 
 import Header from './components/layout/Header';
@@ -14,6 +14,7 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrderConfirmationPage from './pages/OrderConfirmationPage';
 import WishlistPage from './pages/WishlistPage';
+import ComparisonPage from './pages/ComparisonPage';
 
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -39,6 +40,11 @@ import TrackOrderPage from './pages/TrackOrderPage';
 import PrivateClientPage from './pages/PrivateClientPage';
 import BoutiquesPage from './pages/BoutiquesPage';
 import LoyaltyPage from './pages/LoyaltyPage';
+
+import LimitedEditionsPage from './pages/LimitedEditionsPage';
+import BespokePage from './pages/BespokePage';
+import CollaborationsPage from './pages/CollaborationsPage';
+import AfterSalesPage from './pages/AfterSalesPage';
 
 import WatchesCollectionPage from './pages/collections/WatchesCollectionPage';
 import JewelryCollectionPage from './pages/collections/JewelryCollectionPage';
@@ -108,7 +114,7 @@ export default function App() {
         <MinimalLayout><OrderConfirmationPage /></MinimalLayout>
       </Route>
 
-      {/* Admin — standalone full-screen */}
+      {/* Admin — standalone full-screen (Glassmorphism Dashboard) */}
       <Route path="/admin/analytics">
         <AdminAnalyticsPage />
       </Route>
@@ -122,7 +128,9 @@ export default function App() {
         <AdminPage />
       </Route>
 
-      {/* Collection landing pages */}
+      {/* ───────────────────────────────────────────────
+          COLLECTIONS — Each category on its own page
+      _______________________________________________ */}
       <Route path="/collections/watches">
         <AppLayout><WatchesCollectionPage /></AppLayout>
       </Route>
@@ -139,7 +147,9 @@ export default function App() {
         <AppLayout><LeatherCollectionPage /></AppLayout>
       </Route>
 
-      {/* Shopping */}
+      {/* ───────────────────────────────────────────────
+          SHOPPING FLOW
+      _______________________________________________ */}
       <Route path="/">
         <AppLayout><HomePage /></AppLayout>
       </Route>
@@ -158,8 +168,13 @@ export default function App() {
       <Route path="/wishlist">
         <AppLayout><WishlistPage /></AppLayout>
       </Route>
+      <Route path="/compare">
+        <AppLayout><ComparisonPage /></AppLayout>
+      </Route>
 
-      {/* Account */}
+      {/* ───────────────────────────────────────────────
+          ACCOUNT
+      _______________________________________________ */}
       <Route path="/account/orders">
         <AppLayout><OrdersPage /></AppLayout>
       </Route>
@@ -167,7 +182,31 @@ export default function App() {
         <AppLayout><AccountPage /></AppLayout>
       </Route>
 
-      {/* Editorial & Experience */}
+      {/* ───────────────────────────────────────────────
+          EXCLUSIVE EXPERIENCES
+      _______________________________________________ */}
+      <Route path="/limited-editions">
+        <AppLayout><LimitedEditionsPage /></AppLayout>
+      </Route>
+      <Route path="/bespoke">
+        <AppLayout><BespokePage /></AppLayout>
+      </Route>
+      <Route path="/collaborations">
+        <AppLayout><CollaborationsPage /></AppLayout>
+      </Route>
+      <Route path="/after-sales">
+        <AppLayout><AfterSalesPage /></AppLayout>
+      </Route>
+      <Route path="/private-client">
+        <AppLayout><PrivateClientPage /></AppLayout>
+      </Route>
+      <Route path="/loyalty">
+        <AppLayout><LoyaltyPage /></AppLayout>
+      </Route>
+
+      {/* ───────────────────────────────────────────────
+          EDITORIAL & EXPERIENCE
+      _______________________________________________ */}
       <Route path="/lookbook">
         <AppLayout><LookbookPage /></AppLayout>
       </Route>
@@ -183,20 +222,13 @@ export default function App() {
       <Route path="/size-guide">
         <AppLayout><SizeGuidePage /></AppLayout>
       </Route>
-      <Route path="/track-order">
-        <AppLayout><TrackOrderPage /></AppLayout>
-      </Route>
-      <Route path="/private-client">
-        <AppLayout><PrivateClientPage /></AppLayout>
-      </Route>
       <Route path="/boutiques">
         <AppLayout><BoutiquesPage /></AppLayout>
       </Route>
-      <Route path="/loyalty">
-        <AppLayout><LoyaltyPage /></AppLayout>
-      </Route>
 
-      {/* Brand */}
+      {/* ───────────────────────────────────────────────
+          BRAND & COMPANY
+      _______________________________________________ */}
       <Route path="/about">
         <AppLayout><AboutPage /></AppLayout>
       </Route>
@@ -215,6 +247,13 @@ export default function App() {
       <Route path="/press">
         <AppLayout><PressPage /></AppLayout>
       </Route>
+
+      {/* ───────────────────────────────────────────────
+          CUSTOMER SERVICES
+      _______________________________________________ */}
+      <Route path="/track-order">
+        <AppLayout><TrackOrderPage /></AppLayout>
+      </Route>
       <Route path="/shipping">
         <AppLayout><ShippingPage /></AppLayout>
       </Route>
@@ -223,6 +262,9 @@ export default function App() {
       </Route>
       <Route path="/watch-care">
         <AppLayout><WatchCarePage /></AppLayout>
+      </Route>
+      <Route path="/after-sales">
+        <AppLayout><AfterSalesPage /></AppLayout>
       </Route>
 
       <Route>
