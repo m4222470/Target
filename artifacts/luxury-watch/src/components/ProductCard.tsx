@@ -95,22 +95,24 @@ export default function ProductCard({ product, index = 0 }: Props) {
       </Link>
 
       <div>
-        <p className="text-xs text-amber-600 dark:text-amber-400 font-medium uppercase tracking-wider mb-1">{product.brand}</p>
+        <p className="text-[10px] text-amber-600 dark:text-amber-400 font-semibold uppercase tracking-[0.12em] mb-1">{product.brand}</p>
         <Link href={`/product/${product.id}`}>
-          <h3 className="font-semibold text-neutral-900 dark:text-white text-sm leading-snug hover:text-amber-600 dark:hover:text-amber-400 transition-colors cursor-pointer line-clamp-2">
+          <h3 className="font-semibold text-neutral-900 dark:text-white text-sm leading-snug hover:text-amber-600 dark:hover:text-amber-400 transition-colors cursor-pointer line-clamp-2 mb-2">
             {product.name}
           </h3>
         </Link>
-        <div className="flex items-center gap-1 mt-1.5">
-          <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-          <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300">{product.rating}</span>
-          <span className="text-xs text-neutral-400">({product.reviews})</span>
-        </div>
-        <div className="flex items-center gap-2 mt-1.5">
-          <span className="text-base font-bold text-neutral-900 dark:text-white">${product.price.toLocaleString()}</span>
-          {product.originalPrice && (
-            <span className="text-sm text-neutral-400 line-through">${product.originalPrice.toLocaleString()}</span>
-          )}
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1">
+            <Star className="w-3 h-3 text-amber-400 fill-amber-400 flex-shrink-0" />
+            <span className="text-xs font-semibold text-neutral-700 dark:text-neutral-300">{product.rating}</span>
+            <span className="text-xs text-neutral-400 dark:text-neutral-500">({product.reviews})</span>
+          </div>
+          <div className="flex items-center gap-1.5 flex-shrink-0">
+            <span className="text-sm font-bold text-neutral-900 dark:text-white">${product.price.toLocaleString()}</span>
+            {product.originalPrice && (
+              <span className="text-xs text-neutral-400 line-through">${product.originalPrice.toLocaleString()}</span>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>

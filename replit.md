@@ -18,7 +18,7 @@ A full-featured luxury e-commerce frontend for **AURUM & CO.**, a fictional Swis
 | Regular user | user@demo.com    | demo123   |
 | Admin       | admin@demo.com    | admin123  |
 
-## Pages (~22 pages)
+## Pages (46+)
 
 ### Shopping
 - `/` — Hero landing page with categories, featured products, journal
@@ -52,6 +52,19 @@ A full-featured luxury e-commerce frontend for **AURUM & CO.**, a fictional Swis
 - `/sustainability` — Environmental & social responsibility
 - `/careers` — Open positions & benefits
 - `/press` — Press coverage & awards
+- `/boutiques` — Six global boutique locations with map-style selector
+- `/lookbook` — Editorial photo/lookbook layouts
+- `/collections/watches`, `/collections/jewelry`, etc. — Dedicated collection pages
+- `/after-sales`, `/bespoke`, `/collaborations`, `/limited-editions`, `/compare` — Additional pages
+- `/privacy` — Privacy Policy
+- `/terms` — Terms & Conditions
+
+## Design System
+
+- **Brand palette**: Champagne Gold `#c9a227` — defined via Tailwind v4 `@theme {}` static block
+- **CSS vars**: `--color-amber-*` remapped to muted gold tones across all 459+ usages
+- **Announcement bar**: `bg-neutral-950` with champagne gold letter-spacing text
+- **FloatingConcierge**: Shrinks from 48→40px on scroll >180px, `bg-neutral-900`, bottom-right corner
 
 ## Key Files
 

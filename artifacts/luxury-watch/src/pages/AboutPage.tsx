@@ -22,7 +22,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
       <div className="relative h-[60vh] overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=1600&q=80" alt="Geneva atelier" className="w-full h-full object-cover" />
+        <img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=1600&q=80" alt="Geneva atelier" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/30 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-xs tracking-[0.4em] text-amber-400 uppercase mb-3">Since 1985</motion.p>

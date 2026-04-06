@@ -46,8 +46,8 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 pt-2">
               {[Instagram, Twitter, Facebook, Youtube].map((Icon, i) => (
-                <button key={i} className="w-9 h-9 rounded-full bg-neutral-800 hover:bg-amber-600 flex items-center justify-center transition-colors">
-                  <Icon className="w-4 h-4 text-neutral-400 hover:text-white" />
+                <button key={i} className="group w-9 h-9 rounded-full bg-neutral-700 hover:bg-amber-600 flex items-center justify-center transition-all duration-200">
+                  <Icon className="w-4 h-4 text-neutral-200 group-hover:text-white transition-colors" />
                 </button>
               ))}
             </div>

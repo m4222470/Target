@@ -70,10 +70,10 @@ export default function CartPage() {
                   </div>
                   <button className="px-4 py-2.5 bg-neutral-900 dark:bg-neutral-700 text-white text-sm font-semibold rounded-xl hover:bg-neutral-800 dark:hover:bg-neutral-600 transition-colors">Apply</button>
                 </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between text-neutral-600 dark:text-neutral-400"><span>Subtotal</span><span>${subtotal.toLocaleString()}</span></div>
-                  <div className="flex justify-between text-neutral-600 dark:text-neutral-400"><span>Shipping</span><span className="text-green-600 font-medium">Free</span></div>
-                  <div className="flex justify-between text-neutral-600 dark:text-neutral-400"><span>Tax (est.)</span><span>${Math.round(subtotal * 0.08).toLocaleString()}</span></div>
+                <div className="space-y-2.5 text-sm">
+                  <div className="flex justify-between text-neutral-800 dark:text-neutral-200 font-medium"><span>Subtotal</span><span>${subtotal.toLocaleString()}</span></div>
+                  <div className="flex justify-between text-neutral-800 dark:text-neutral-200 font-medium"><span>Shipping</span><span className="text-green-600 dark:text-green-400 font-semibold">Free</span></div>
+                  <div className="flex justify-between text-neutral-700 dark:text-neutral-300"><span>Tax (est.)</span><span>${Math.round(subtotal * 0.08).toLocaleString()}</span></div>
                 </div>
                 <div className="flex justify-between font-bold text-neutral-900 dark:text-white text-lg border-t border-neutral-200 dark:border-neutral-700 pt-3">
                   <span>Total</span>
