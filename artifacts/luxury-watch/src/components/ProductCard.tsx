@@ -105,7 +105,7 @@ export default function ProductCard({ product, index = 0 }: Props) {
           <div className="flex items-center gap-1">
             <Star className="w-3 h-3 text-amber-400 fill-amber-400 flex-shrink-0" />
             <span className="text-xs font-semibold text-neutral-700 dark:text-neutral-300">{product.rating}</span>
-            <span className="text-xs text-neutral-400 dark:text-neutral-500">({product.reviews})</span>
+            <span className="text-xs text-neutral-500 dark:text-neutral-400">({product.reviews})</span>
           </div>
           <div className="flex items-center gap-1.5 flex-shrink-0">
             <span className="text-sm font-bold text-neutral-900 dark:text-white">${product.price.toLocaleString()}</span>

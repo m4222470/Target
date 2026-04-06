@@ -81,7 +81,7 @@ export default function FloatingConcierge() {
               {chatMessages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.from === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div
-                    className={`max-w-[86%] px-3.5 py-2.5 rounded-2xl text-[13px] leading-[1.65] ${
+                    className={`max-w-[86%] px-3.5 py-2.5 rounded-2xl text-[13px] leading-[1.8] ${
                       msg.from === 'user'
                         ? 'bg-neutral-900 text-white dark:bg-amber-600 rounded-br-sm'
                         : 'bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 rounded-bl-sm shadow-sm'
@@ -147,7 +147,7 @@ export default function FloatingConcierge() {
       <motion.button
         whileTap={{ scale: 0.92 }}
         onClick={() => setOpen(!open)}
-        animate={{ width: open || !scrolled ? 48 : 40, height: open || !scrolled ? 48 : 40 }}
+        animate={{ width: scrolled && !open ? 38 : 44, height: scrolled && !open ? 38 : 44 }}
         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
         className="relative bg-neutral-900 hover:bg-neutral-800 rounded-full shadow-xl flex items-center justify-center text-white transition-colors overflow-hidden"
         style={{ minWidth: 0 }}
@@ -155,11 +155,11 @@ export default function FloatingConcierge() {
         <AnimatePresence mode="wait">
           {open ? (
             <motion.div key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
-              <X className={scrolled && !open ? 'w-4 h-4' : 'w-5 h-5'} />
+              <X className="w-4 h-4" />
             </motion.div>
           ) : (
             <motion.div key="msg" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
-              <MessageCircle className={scrolled ? 'w-4 h-4' : 'w-5 h-5'} />
+              <MessageCircle className={scrolled ? 'w-4 h-4' : 'w-[18px] h-[18px]'} />
             </motion.div>
           )}
         </AnimatePresence>
