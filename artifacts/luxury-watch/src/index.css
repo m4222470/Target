@@ -1,28 +1,74 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * AURUM & CO — LUXURY E-COMMERCE DESIGN SYSTEM
+ * Premium Theme for Rolex, Cartier, Patek Philippe Competitors
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-/* ═══════════════════════════════════════════════════════
-   CHAMPAGNE GOLD PALETTE  —  replaces the default amber
-   All amber-* utility classes now render in muted gold.
-═══════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. LUXURY COLOR PALETTE — Royal Noir & Champagne Gold
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Champagne Gold Palette — replaces the default amber */
 @theme {
+  /* Primary Backgrounds */
+  --color-royal-black: #0A0A0A;
+  --color-charcoal-deep: #121212;
+  --color-charcoal-soft: #1A1A1A;
+  --color-charcoal-card: #1E1E1E;
+
+  /* Champagne Gold Palette */
+  --color-champagne-gold: #D4AF37;
+  --color-gold-muted: #B8956E;
+  --color-gold-light: #E8D5A3;
+  --color-gold-dark: #A68B29;
+  --color-gold-subtle: rgba(212, 175, 55, 0.15);
+
+  /* Rose Gold Alternative */
+  --color-rose-gold: #B76E79;
+  --color-rose-gold-light: #D4A5A5;
+
+  /* Bronze Alternative */
+  --color-bronze-rich: #8B7355;
+  --color-bronze-light: #A69076;
+
+  /* Light Theme Neutrals */
+  --color-ivory-pure: #FFFFFF;
+  --color-ivory-soft: #F5F5F0;
+  --color-ivory-warm: #F9F6F0;
+  --color-cream: #FAF7F2;
+  --color-parchment: #E8E4DC;
+
+  /* Gray Palette */
+  --color-gray-warm: #8A8A8A;
+  --color-gray-deep: #2A2A2A;
+  --color-gray-light: #6B6B6B;
+
+  /* Legacy Amber → Gold Mapping */
   --color-amber-50:  #fdf8ee;
   --color-amber-100: #f6e9c4;
   --color-amber-200: #ecd28a;
   --color-amber-300: #ddb84d;
   --color-amber-400: #c9a227;
   --color-amber-500: #aa8318;
-  --color-amber-600: #8c6712;
-  --color-amber-700: #6e4f0f;
+  --color-amber-600: #D4AF37; /* ← Champagne Gold */
+  --color-amber-700: #8c6712;
   --color-amber-800: #573d0d;
   --color-amber-900: #46300c;
   --color-amber-950: #271806;
 }
 
-/* Dynamic design-system tokens (must use @theme inline for CSS-var references) */
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. DYNAMIC DESIGN TOKENS (CSS Variables for Shadcn/Radix)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 @theme inline {
+  /* Dynamic color references */
   --color-background:          hsl(var(--background));
   --color-foreground:          hsl(var(--foreground));
   --color-border:              hsl(var(--border));
@@ -42,90 +88,394 @@
   --color-destructive-foreground: hsl(var(--destructive-foreground));
   --color-popover:             hsl(var(--popover));
   --color-popover-foreground:  hsl(var(--popover-foreground));
+
+  /* Radius */
   --radius-sm:  calc(var(--radius) - 4px);
   --radius-md:  calc(var(--radius) - 2px);
   --radius-lg:  var(--radius);
   --radius-xl:  calc(var(--radius) + 4px);
 }
 
-/* ─── Light mode ─────────────────────────────────────── */
+/* ─── Light Mode ──────────────────────────────────────────────────────── */
 :root {
-  --background:            0 0% 98%;
-  --foreground:            0 0% 9%;
-  --border:                0 0% 89%;
-  --card:                  0 0% 100%;
+  /* Luxury Light Theme — Ivory & Cream */
+  --background:            40 20% 97%;      /* #F9F6F0 Ivory Warm */
+  --foreground:            0 0% 9%;         /* #171717 Rich Black */
+
+  --card:                  40 20% 98%;       /* #FDFCFA */
   --card-foreground:       0 0% 9%;
-  --muted:                 0 0% 96%;
-  --muted-foreground:      0 0% 45%;
-  --primary:               43 74% 43%;   /* Champagne gold */
-  --primary-foreground:    0 0% 100%;
-  --secondary:             0 0% 96%;
+
+  --popover:              40 20% 98%;
+  --popover-foreground:   0 0% 9%;
+
+  --primary:               43 74% 43%;       /* #D4AF37 Champagne Gold */
+  --primary-foreground:    0 0% 4%;          /* #0A0A0A Royal Black */
+
+  --secondary:             40 15% 94%;       /* #F5F2EC */
   --secondary-foreground:  0 0% 9%;
-  --accent:                43 74% 43%;
-  --accent-foreground:     0 0% 100%;
-  --destructive:           0 84% 60%;
-  --destructive-foreground:0 0% 100%;
-  --input:                 0 0% 89%;
-  --ring:                  43 74% 43%;
-  --popover:               0 0% 100%;
-  --popover-foreground:    0 0% 9%;
-  --radius:                0.5rem;
-  --gallery-bg:            #f5f5f5;
+
+  --muted:                40 10% 92%;
+  --muted-foreground:     0 0% 45%;
+
+  --accent:               43 74% 43%;        /* Champagne Gold */
+  --accent-foreground:    0 0% 4%;
+
+  --destructive:           0 63% 31%;
+  --destructive-foreground:0 0% 98%;
+
+  --border:               40 10% 88%;
+  --input:                40 10% 88%;
+  --ring:                 43 74% 43%;
+
+  /* Gallery & Special */
+  --gallery-bg:           #F5F2EC;
+  --gold-glow:           rgba(212, 175, 55, 0.3);
 }
 
-/* ─── Dark mode ──────────────────────────────────────── */
+/* ─── Dark Mode ───────────────────────────────────────────────────────── */
 .dark {
-  --background:            0 0% 4%;
-  --foreground:            0 0% 96%;
-  --border:                0 0% 15%;
-  --card:                  0 0% 9%;
+  /* Luxury Dark Theme — Royal Noir & Gold */
+  --background:            0 0% 4%;          /* #0A0A0A Royal Black */
+  --foreground:            0 0% 96%;         /* #F5F5F5 */
+
+  --card:                  0 0% 9%;          /* #171717 */
   --card-foreground:       0 0% 96%;
-  --muted:                 0 0% 15%;
-  --muted-foreground:      0 0% 64%;
-  --primary:               43 68% 52%;
-  --primary-foreground:    0 0% 100%;
-  --secondary:             0 0% 15%;
+
+  --popover:              0 0% 9%;
+  --popover-foreground:   0 0% 96%;
+
+  --primary:               43 74% 52%;       /* #E8D078 Bright Gold */
+  --primary-foreground:    0 0% 4%;
+
+  --secondary:             0 0% 15%;          /* #262626 */
   --secondary-foreground:  0 0% 96%;
-  --accent:                43 68% 52%;
-  --accent-foreground:     0 0% 100%;
+
+  --muted:                0 0% 15%;
+  --muted-foreground:     0 0% 64%;
+
+  --accent:               43 74% 52%;
+  --accent-foreground:    0 0% 4%;
+
   --destructive:           0 63% 31%;
   --destructive-foreground:0 0% 96%;
-  --input:                 0 0% 20%;
-  --ring:                  43 68% 52%;
-  --popover:               0 0% 9%;
-  --popover-foreground:    0 0% 96%;
-  --gallery-bg:            #1a1a1a;
+
+  --border:               0 0% 15%;
+  --input:                0 0% 20%;
+  --ring:                 43 74% 52%;
+
+  /* Gallery & Special */
+  --gallery-bg:           #1A1A1A;
+  --gold-glow:           rgba(212, 175, 55, 0.4);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. BASE STYLES & TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════════════ */
 
 @layer base {
-  * { @apply border-border; }
-  body { @apply font-sans antialiased bg-background text-foreground; }
-  html { scroll-behavior: smooth; }
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+
+  /* Luxury Typography — Display/Headings */
+  h1, h2, h3, h4, h5, h6,
+  .font-display, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  /* Headings specific styling */
+  h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3rem); }
+  h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+  h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 
-/* ─── Scrollbar ──────────────────────────────────────── */
-::-webkit-scrollbar              { width: 8px; height: 8px; }
-::-webkit-scrollbar-track        { background: transparent; }
-::-webkit-scrollbar-thumb        { background: #d4d4d4; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover  { background: #a3a3a3; }
-.dark ::-webkit-scrollbar-thumb        { background: #404040; }
-.dark ::-webkit-scrollbar-thumb:hover  { background: #525252; }
+/* ═══════════════════════════════════════════════════════════════════════════
+   4. LUXURY SCROLLBAR STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ─── Number spinners ────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--champagne-gold);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   5. SELECTION STYLING — Champagne Gold
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+::selection {
+  background-color: var(--champagne-gold);
+  color: var(--royal-black);
+}
+
+.dark ::selection {
+  background-color: var(--gold-light);
+  color: var(--royal-black);
+}
+
+::-moz-selection {
+  background-color: var(--champagne-gold);
+  color: var(--royal-black);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6. FOCUS RING — Luxury Gold
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+*:focus-visible {
+  outline: 2px solid var(--champagne-gold);
+  outline-offset: 2px;
+}
+
+.dark *:focus-visible {
+  outline-color: var(--gold-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7. NUMBER SPINNERS — Hide
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-input[type='number'] { -moz-appearance: textfield; }
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-/* ─── Focus ring — champagne gold ────────────────────── */
-*:focus-visible       { outline: 2px solid #8c6712; outline-offset: 2px; }
-.dark *:focus-visible { outline-color: #c9a227; }
+input[type='number'] {
+  -moz-appearance: textfield;
+}
 
-/* ─── Text selection — champagne gold ───────────────── */
-::selection       { background-color: #ecd28a; color: #1c1917; }
-.dark ::selection { background-color: #6e4f0f; color: #fdf8ee; }
+/* ═══════════════════════════════════════════════════════════════════════════
+   8. LUXURY ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ─── Keyframes ──────────────────────────────────────── */
-@keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slide-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.animate-fade-in  { animation: fade-in  0.3s ease-out; }
-.animate-slide-up { animation: slide-up 0.4s ease-out; }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gold-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--gold-glow); }
+  50% { box-shadow: 0 0 20px 5px var(--gold-glow); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--secondary)) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-gold-pulse {
+  animation: gold-pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   9. LUXURY COMPONENT ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Premium Button Hover Effects */
+.btn-luxury-hover {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-luxury-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+}
+
+/* Gold Border Glow */
+.gold-border-glow {
+  border: 1px solid var(--champagne-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Premium Card Hover */
+.card-luxury-hover {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-luxury-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient Text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--gold-light) 50%, var(--champagne-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium Divider */
+.divider-luxury {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold-muted) 50%,
+    transparent 100%
+  );
+}
+
+/* Glass Effect */
+.glass-luxury {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-luxury {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   10. UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Text Colors */
+.text-gold { color: var(--champagne-gold); }
+.text-gold-muted { color: var(--gold-muted); }
+.text-gold-light { color: var(--gold-light); }
+.text-ivory { color: var(--ivory-pure); }
+
+/* Background Colors */
+.bg-royal { background-color: var(--royal-black); }
+.bg-charcoal { background-color: var(--charcoal-deep); }
+.bg-gold { background-color: var(--champagne-gold); }
+
+/* Border Colors */
+.border-gold { border-color: var(--champagne-gold); }
+
+/* Shadows */
+.shadow-gold { box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25); }
+.shadow-card { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); }
+
+/* Letter Spacing */
+.tracking-luxury {
+  letter-spacing: 0.2em;
+}
+
+/* Image Zoom Effect */
+.img-zoom {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.group:hover .img-zoom {
+  transform: scale(1.05);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   11. ANNOUNCEMENT BAR STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.announcement-bar {
+  background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--gold-muted) 100%);
+  color: var(--royal-black);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   12. RESPONSIVE CONTAINER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.container-luxury {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 640px) {
+  .container-luxury {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   END OF LUXURY DESIGN SYSTEM
+   ═══════════════════════════════════════════════════════════════════════════ */
